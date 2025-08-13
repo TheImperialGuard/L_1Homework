@@ -1,3 +1,4 @@
+using Assets._Project.Develop.Runtime.Configs;
 using Assets._Project.Develop.Runtime.Utilities.AssetsManagment;
 using System;
 using System.Collections;
@@ -12,7 +13,7 @@ namespace Assets._Project.Develop.Runtime.Utilities.ConfigsManagment
 
         private readonly Dictionary<Type, string> _configsResourcesPaths = new()
         {
-
+            {typeof(SymbolsSetsListConfig), "Configs/SymbolsSetsListConfig" },
         };
 
         public ResourcesConfigsLoader(ResourcesAssetsLoader resources)

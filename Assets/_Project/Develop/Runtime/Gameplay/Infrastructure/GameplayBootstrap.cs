@@ -12,6 +12,7 @@ namespace Assets._Project.Develop.Runtime.Gameplay.Infrastructure
     {
         private DIContainer _container;
         private GameplayInputArgs _inputArgs;
+        private GameplayCycle _cycle;
 
         public override void ProcessRegistrations(DIContainer container, IInputSceneArgs inputSceneArgs = null)
         {
@@ -35,17 +36,11 @@ namespace Assets._Project.Develop.Runtime.Gameplay.Infrastructure
         public override void Run()
         {
             Debug.Log("Старт геймплейной сцены");
+
+            _cycle = new GameplayCycle(_container, _inputArgs);
+            _container.Resolve<ICoroutinesPerformer>().StartPerform(_cycle.Launch());
         }
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                SceneSwitcherService sceneSwitcherService = _container.Resolve<SceneSwitcherService>();
-                ICoroutinesPerformer coroutinesPerformer = _container.Resolve<ICoroutinesPerformer>();
-
-                coroutinesPerformer.StartPerform(sceneSwitcherService.ProcessSwitchTo(Scenes.MainMenu));
-            }
-        }
+        private void Update() => _cycle?.Update(Time.deltaTime);
     }
 }

@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 827958b6cc740e541807a21a68a66b80, type: 3}
-  m_Name: LetterSetConfig
+  m_Name: LettersSetConfig
   m_EditorClassIdentifier: 
-  symbols: 5100570045005200540059005500
+  _letters: 61000000620000006300000064000000650000006600000067000000
