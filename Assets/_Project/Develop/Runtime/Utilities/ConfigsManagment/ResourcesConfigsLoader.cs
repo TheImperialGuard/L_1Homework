@@ -1,4 +1,6 @@
 using Assets._Project.Develop.Runtime.Configs;
+using Assets._Project.Develop.Runtime.Configs.Meta.Wallet;
+using Assets._Project.Develop.Runtime.Configs.Meta.RoundsScore;
 using Assets._Project.Develop.Runtime.Utilities.AssetsManagment;
 using System;
 using System.Collections;
@@ -13,7 +15,9 @@ namespace Assets._Project.Develop.Runtime.Utilities.ConfigsManagment
 
         private readonly Dictionary<Type, string> _configsResourcesPaths = new()
         {
-            {typeof(SymbolsSetsListConfig), "Configs/SymbolsSetsListConfig" },
+            {typeof(StartWalletConfig), "Configs/Meta/Wallet/StartWalletConfig" },
+            {typeof(SymbolSequenceGameConfig), "Configs/SymbolSequenceGameConfig" },
+            {typeof(RoundsScoreResetConfig), "Configs/Meta/RoundsScore/RoundsScoreResetConfig" }
         };
 
         public ResourcesConfigsLoader(ResourcesAssetsLoader resources)

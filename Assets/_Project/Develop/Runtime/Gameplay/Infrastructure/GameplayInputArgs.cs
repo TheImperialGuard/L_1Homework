@@ -5,11 +5,11 @@ namespace Assets._Project.Develop.Runtime.Gameplay.Infrastructure
 {
     public class GameplayInputArgs : IInputSceneArgs
     {
-        public GameplayInputArgs(SymbolsSetConfig symbolsSetConfig)
+        public GameplayInputArgs(GameMods gameMode)
         {
-            SymbolsSetConfig = symbolsSetConfig;
+            GameMode = gameMode;
         }
 
-        public SymbolsSetConfig SymbolsSetConfig { get; }
+        public GameMods GameMode { get; }
     }
 }

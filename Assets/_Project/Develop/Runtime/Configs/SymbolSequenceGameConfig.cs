@@ -1,4 +1,5 @@
-﻿using Assets._Project.Develop.Runtime.Gameplay.Infrastructure;
+﻿using Assets._Project.Develop.Runtime.Configs.Meta.Wallet;
+using Assets._Project.Develop.Runtime.Gameplay.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,12 +7,16 @@ using UnityEngine;
 
 namespace Assets._Project.Develop.Runtime.Configs
 {
-    [CreateAssetMenu(menuName = "Configs/Gameplay/SymbolsSetsListConfig", fileName = "SymbolsSetsListConfig")]
-    public class SymbolsSetsListConfig : ScriptableObject
+    [CreateAssetMenu(menuName = "Configs/Gameplay/SymbolSequenceGameConfig", fileName = "SymbolSequenceGameConfig")]
+    public class SymbolSequenceGameConfig : ScriptableObject
     {
         [SerializeField] private List<SymbolsSetConfig> _configsList;
+        [SerializeField] private List<CurrencyConfig> _winRewardsList;
+        [SerializeField] private List<CurrencyConfig> _loseFineList;
 
         public IReadOnlyList<SymbolsSetConfig> ConfigsList => _configsList;
+        public IReadOnlyList<CurrencyConfig> WinRewardsList => _winRewardsList;
+        public IReadOnlyList<CurrencyConfig> LoseFineList => _loseFineList;
 
         public SymbolsSetConfig GetConfigBy(GameMods gameMod)
         {

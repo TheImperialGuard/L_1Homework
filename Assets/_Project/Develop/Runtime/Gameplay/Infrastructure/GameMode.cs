@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Assets._Project.Develop.Runtime.Infrastructure.DI;
+using Assets._Project.Develop.Runtime.Meta.Features.RoundsScore;
+using Assets._Project.Develop.Runtime.Utilities.CoroutinesManagment;
+using Assets._Project.Develop.Runtime.Utilities.DataManagment.DataProviders;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -42,12 +46,14 @@ namespace Assets._Project.Develop.Runtime.Gameplay.Infrastructure
         private void ProcessWin()
         {
             ProcessEndGame();
+
             Win?.Invoke();
         }
 
         private void ProcessLose()
         {
             ProcessEndGame();
+
             Lose?.Invoke();
         }
 

@@ -9,7 +9,7 @@ namespace Assets._Project.Develop.Runtime.Meta.Infrastructure
     internal class MainMenuBootstrap : SceneBootstrap
     {
         private DIContainer _container;
-        private MainMenuCycle _cycle;
+        private MainMenuNavigator _gameModeSwitcher;
 
         public override void ProcessRegistrations(DIContainer container, IInputSceneArgs inputArgs = null)
         {
@@ -28,9 +28,9 @@ namespace Assets._Project.Develop.Runtime.Meta.Infrastructure
         public override void Run()
         {
             Debug.Log("Старт сцены главного меню");
-            _cycle = new MainMenuCycle(_container);
+            _gameModeSwitcher = new MainMenuNavigator(_container);
         }
 
-        private void Update() => _cycle?.Update(Time.deltaTime);
+        private void Update() => _gameModeSwitcher?.Update(Time.deltaTime);
     }
 }
